@@ -148,7 +148,7 @@ Register_Cut:
 
 	ld de, ENGINE_BADGE_CUT
 	farcall CheckEngineFlag
-	jr c, .cant_cut
+	jr c, .no_badge
 
 	farcall CheckMapForSomethingToCut
 	jr c, .nothing_to_cut
@@ -188,7 +188,7 @@ Select_NoMonWithMoveText:
 	text_end
 
 Select_NoBadgeText:
-	text_far _BadgeRequiredText
+	text_far _BadgeRequiredOWText
 	text_end
 
 Register_SweetScent:

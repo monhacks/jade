@@ -250,6 +250,11 @@ _BadgeRequiredText::
 	line "is required."
 	prompt
 
+_BadgeRequiredOWText::
+	text "Sorry! A new BADGE"
+	line "is required."
+	done
+
 _CantUseItemText::
 	text "Can't use that"
 	line "here."
