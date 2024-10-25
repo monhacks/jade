@@ -172,6 +172,11 @@ YoungsterGroup:
 	trainer_mon  BULBASAUR, 5, OVERGROW, MALE
 	db -1 ; end
 
+	next_list_item ; YOUNGSTER (3)
+	db "JUSTIN@", TRAINERTYPE_NORMAL
+	trainer_mon  NUMEL, 9, OBLIVIOUS, MALE
+	db -1 ; end
+
 	end_list_items
 
 SECTION "Enemy Trainer Parties 2", ROMX
@@ -184,6 +189,11 @@ LassGroup:
 	next_list_item ; LASS (1)
 	db "ABBY@", TRAINERTYPE_NORMAL
 	trainer_mon  BULBASAUR, 5, OVERGROW, MALE
+	db -1 ; end
+
+	next_list_item ; LASS (2)
+	db "LILLY@", TRAINERTYPE_NORMAL
+	trainer_mon  WOOPER, 9, DAMP, FEMALE
 	db -1 ; end
 
 	end_list_items
@@ -227,6 +237,11 @@ BugCatcherGroup:
 	next_list_item ; BUG_CATCHER (4)
 	db "-@", TRAINERTYPE_NORMAL
 	trainer_mon  BULBASAUR, 5, OVERGROW, MALE
+	db -1 ; end
+
+	next_list_item ; BUG_CATCHER (5)
+	db "GEOFF@", TRAINERTYPE_NORMAL
+	trainer_mon  PARAS, 9, DRY_SKIN, MALE
 	db -1 ; end
 
 	end_list_items

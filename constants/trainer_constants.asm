@@ -80,6 +80,7 @@ DEF RIVAL1_1 EQU const_value - 3
 	trainerclass YOUNGSTER ; 16
 	const YOUNGSTER_DANNY
 	const YOUNGSTER_2
+	const YOUNGSTER_JUSTIN
 
 	trainerclass SCHOOLBOY ; 17
 
@@ -87,6 +88,7 @@ DEF RIVAL1_1 EQU const_value - 3
 
 	trainerclass LASS ; 19
 	const LASS_ABBY
+	const LASS_LILLY
 
 	trainerclass JANINE ; 1a
 
@@ -113,6 +115,7 @@ DEF RIVAL1_1 EQU const_value - 3
 	const BUG_CATCHER_2
 	const BUG_CATCHER_3
 	const BUG_CATCHER_4
+	const BUG_CATCHER_GEOFF
 
 	trainerclass FISHER ; 25
 
