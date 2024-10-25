@@ -473,4 +473,5 @@ MoveNames::
 	li "TRAILBLAZE"
 	li "DOOM DESIRE"
 	li "CRUSH GRIP"
+	li "CONFIDE"
 	assert_list_length NUM_ATTACKS

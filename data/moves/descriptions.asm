@@ -490,6 +490,7 @@ MoveDescriptionsGroups4:
 	dw InvalidMoveDescription
 	dw InvalidMoveDescription
 	dw InvalidMoveDescription
+	dw InvalidMoveDescription
 .IndirectEnd::
 
 InvalidMoveDescription:

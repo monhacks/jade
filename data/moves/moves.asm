@@ -515,6 +515,7 @@ MovesGroup4:
 	move EFFECT_SPLASH,              0, NORMAL,        PHYSICAL, 100,  0,   0, %00000000 ;
 	move EFFECT_SPLASH,              0, NORMAL,        PHYSICAL, 100,  0,   0, %00000000 ;
 	move EFFECT_SPLASH,              0, NORMAL,        PHYSICAL, 100,  0,   0, %00000000 ;
+	move EFFECT_SPLASH,              0, NORMAL,        PHYSICAL, 100,  0,   0, %00000000 ;
 .IndirectEnd::
 
 POPS
