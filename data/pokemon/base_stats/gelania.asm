@@ -1,21 +1,21 @@
 	db 0 ; species ID placeholder
 
-	db   1,   1,   1,   1,   1,   1
-	evs  1,   0,   0,   0,   0,   0
+	db  85, 120,  90,  85,  75,  80
+	evs  0,   3,   0,   0,   0,   0
 	;   hp  atk  def  spd  sat  sdf
 
 	db GRASS, GRASS ; type
-	db 255 ; catch rate
-	db 1 ; base exp
+	db 30 ; catch rate
+	db 215 ; base exp
 	dw NO_ITEM, NO_ITEM ; items
 	db GENDER_F50 ; gender ratio
 	db 20 ; step cycles to hatch
 	INCBIN "gfx/pokemon/placeholder/front.dimensions"
-	db NO_ABILITY, NO_ABILITY, NO_ABILITY ; abilities
+	db CHLOROPHYLL, LEAF_GUARD, REGENERATOR ; abilities
 	db 0 ; unused
 	db GROWTH_MEDIUM_FAST ; growth rate
 	db 70 ; base happiness
-	dn EGG_NONE, EGG_NONE ; egg groups
+	dn EGG_PLANT, EGG_PLANT ; egg groups
 
 	; tm/hm learnset
 	tmhm
