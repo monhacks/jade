@@ -429,18 +429,19 @@ DEF LATER_POKEMON EQU const_value
 	const MON_196    ; 196
 	const MON_197    ; 197
 	const MON_198    ; 198
-	const MON_199    ; 199
+	const ELHAWK     ; 199
 	const FRIGO      ; 19a
 DEF NUM_DEX_POKEMON EQU const_value - 1
 	const DEOXYS_ATTACK  ; 19b
 	const DEOXYS_DEFENSE ; 19c
 	const DEOXYS_SPEED   ; 19d
-	const LYCANROC_NITE  ; 19e
-	const LYCANROC_DUSK  ; 19f
-	const URSALUNA_BLOOD ; 1a0
-	const CASTFORM_SUNNY ; 1a1
-	const CASTFORM_RAINY ; 1a2
-	const CASTFORM_SNOWY ; 1a3
+	const DEOXYS_4       ; 19e
+	const LYCANROC_NITE  ; 19f
+	const LYCANROC_DUSK  ; 1a0
+	const URSALUNA_BLOOD ; 1a1
+	const CASTFORM_SUNNY ; 1a2
+	const CASTFORM_RAINY ; 1a3
+	const CASTFORM_SNOWY ; 1a4
 DEF NUM_POKEMON EQU const_value - 1
 
 DEF EGG EQU -3

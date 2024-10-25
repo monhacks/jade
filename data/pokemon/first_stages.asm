@@ -409,8 +409,9 @@ FirstEvoStages::
 	dw -1
 	dw -1
 	dw -1
-	dw -1
+	dw ELHAWK
 	dw FRIGO
+	dw DEOXYS
 	dw DEOXYS
 	dw DEOXYS
 	dw DEOXYS

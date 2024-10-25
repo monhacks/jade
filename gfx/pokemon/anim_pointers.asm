@@ -419,4 +419,5 @@ AnimationPointers:
 	dw PlaceholderAnimation
 	dw PlaceholderAnimation
 	dw PlaceholderAnimation
+	dw PlaceholderAnimation
 	assert_table_length NUM_POKEMON

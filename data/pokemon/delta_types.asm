@@ -419,6 +419,7 @@ DeltaTypePointers:
 	dw NoDeltaTypes
 	dw NoDeltaTypes
 	dw NoDeltaTypes
+	dw NoDeltaTypes
 	assert_table_length NUM_POKEMON
 
 MACRO deltadef

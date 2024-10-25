@@ -93,6 +93,7 @@ AlphabeticalPokedexOrder:
 	dw ELECTIVIRE
 	dw ELECTRODE
 	dw ELEKID
+	dw ELHAWK
 	dw ENTEI
 	dw ESPEON
 	dw EXEGGCUTE
@@ -264,7 +265,6 @@ AlphabeticalPokedexOrder:
 	dw MON_196
 	dw MON_197
 	dw MON_198
-	dw MON_199
 	dw MUDKIP
 	dw MUNCHLAX
 	dw MURKROW
@@ -412,6 +412,7 @@ AlphabeticalPokedexOrder:
 	dw ZIGZAGOON
 	dw ZUBAT
 	dw _SPACEBOAT
+	dw -1
 	dw -1
 	dw -1
 	dw -1

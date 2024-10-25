@@ -408,11 +408,12 @@ DexListNazoh:
 	dw    0 ; MON_196
 	dw    0 ; MON_197
 	dw    0 ; MON_198
-	dw    0 ; MON_199
+	dw    0 ; ELHAWK
 	dw    0 ; FRIGO
 	dw    0 ; DEOXYS_ATTACK
 	dw    0 ; DEOXYS_DEFENSE
 	dw    0 ; DEOXYS_SPEED
+	dw    0 ; DEOXYS_4
 	dw    0 ; LYCANROC_NITE
 	dw    0 ; LYCANROC_DUSK
 	dw    0 ; URSALUNA_BLOOD

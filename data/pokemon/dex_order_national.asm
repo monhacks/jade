@@ -353,4 +353,5 @@ NationalPokedexOrder:
 	dw WARWULF        ; 1037
 	dw KOKOPELLI      ; 1038
 	dw FRIGO          ; 1039
+	dw ELHAWK         ; 1040
 .End

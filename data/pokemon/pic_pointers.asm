@@ -854,4 +854,6 @@ PokemonPicPointers::
 	dba PlaceholderBackpic
 	dba PlaceholderFrontpic
 	dba PlaceholderBackpic
+	dba PlaceholderFrontpic
+	dba PlaceholderBackpic
 	assert_table_length NUM_POKEMON + 1
