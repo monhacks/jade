@@ -637,6 +637,8 @@ ZangooseFrontpic: INCBIN "gfx/pokemon/zangoose/front.animated.2bpp.lz"
 ZangooseBackpic: INCBIN "gfx/pokemon/zangoose/back.2bpp.lz"
 ZigzagoonFrontpic: INCBIN "gfx/pokemon/zigzagoon/front.animated.2bpp.lz"
 ZigzagoonBackpic: INCBIN "gfx/pokemon/zigzagoon/back.2bpp.lz"
+ElhawkFrontpic: INCBIN "gfx/pokemon/elhawk/front.animated.2bpp.lz"
+ElhawkBackpic: INCBIN "gfx/pokemon/elhawk/back.2bpp.lz"
 
 SECTION "Pics 18", ROMX
 SECTION "Pics 19", ROMX

@@ -832,8 +832,8 @@ PokemonPicPointers::
 	dba PlaceholderBackpic
 	dba PlaceholderFrontpic
 	dba PlaceholderBackpic
-	dba PlaceholderFrontpic
-	dba PlaceholderBackpic
+	dba ElhawkFrontpic
+	dba ElhawkBackpic
 	dba PlaceholderFrontpic
 	dba PlaceholderBackpic
 	dba PlaceholderFrontpic

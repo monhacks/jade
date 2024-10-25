@@ -330,6 +330,7 @@ WhiscashBitmasks: INCLUDE "gfx/pokemon/whiscash/bitmask.asm"
 SnoruntBitmasks: INCLUDE "gfx/pokemon/snorunt/bitmask.asm"
 GlalieBitmasks: INCLUDE "gfx/pokemon/glalie/bitmask.asm"
 FroslassBitmasks: INCLUDE "gfx/pokemon/froslass/bitmask.asm"
+ElhawkBitmasks: INCLUDE "gfx/pokemon/elhawk/bitmask.asm"
 
 PlaceholderBitmasks: INCLUDE "gfx/pokemon/placeholder/bitmask.asm"
 EggBitmasks:        INCLUDE "gfx/pokemon/egg/bitmask.asm"

@@ -408,7 +408,7 @@ BitmasksPointers:
 	dw PlaceholderBitmasks
 	dw PlaceholderBitmasks
 	dw PlaceholderBitmasks
-	dw PlaceholderBitmasks
+	dw ElhawkBitmasks
 	dw PlaceholderBitmasks
 	dw PlaceholderBitmasks
 	dw PlaceholderBitmasks

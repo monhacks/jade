@@ -10,8 +10,8 @@
 	dw NO_ITEM, NO_ITEM ; items
 	db GENDER_F50 ; gender ratio
 	db 20 ; step cycles to hatch
-	INCBIN "gfx/pokemon/placeholder/front.dimensions"
-	db NO_ABILITY, NO_ABILITY, NO_ABILITY ; abilities
+	INCBIN "gfx/pokemon/elhawk/front.dimensions"
+	db FLASH_FIRE, FLASH_FIRE, SPEED_BOOST ; abilities
 	db 0 ; unused
 	db GROWTH_SLOW ; growth rate
 	db 70 ; base happiness

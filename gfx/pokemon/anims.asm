@@ -330,6 +330,7 @@ WhiscashAnimation: INCLUDE "gfx/pokemon/whiscash/anim.asm"
 SnoruntAnimation: INCLUDE "gfx/pokemon/snorunt/anim.asm"
 GlalieAnimation: INCLUDE "gfx/pokemon/glalie/anim.asm"
 FroslassAnimation: INCLUDE "gfx/pokemon/froslass/anim.asm"
+ElhawkAnimation: INCLUDE "gfx/pokemon/elhawk/anim.asm"
 
 PlaceholderAnimation: INCLUDE "gfx/pokemon/placeholder/anim.asm"
 EggAnimation:        INCLUDE "gfx/pokemon/egg/anim.asm"

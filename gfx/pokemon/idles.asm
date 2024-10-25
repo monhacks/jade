@@ -329,6 +329,7 @@ WhiscashAnimationIdle: INCLUDE "gfx/pokemon/whiscash/anim_idle.asm"
 SnoruntAnimationIdle: INCLUDE "gfx/pokemon/snorunt/anim_idle.asm"
 GlalieAnimationIdle: INCLUDE "gfx/pokemon/glalie/anim_idle.asm"
 FroslassAnimationIdle: INCLUDE "gfx/pokemon/froslass/anim_idle.asm"
+ElhawkAnimationIdle: INCLUDE "gfx/pokemon/elhawk/anim_idle.asm"
 
 PlaceholderAnimationIdle: INCLUDE "gfx/pokemon/placeholder/anim_idle.asm"
 EggAnimationIdle:        INCLUDE "gfx/pokemon/egg/anim_idle.asm"

@@ -408,7 +408,7 @@ AnimationPointers:
 	dw PlaceholderAnimation
 	dw PlaceholderAnimation
 	dw PlaceholderAnimation
-	dw PlaceholderAnimation
+	dw ElhawkAnimation
 	dw PlaceholderAnimation
 	dw PlaceholderAnimation
 	dw PlaceholderAnimation

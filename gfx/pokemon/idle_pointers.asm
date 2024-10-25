@@ -408,7 +408,7 @@ AnimationIdlePointers:
 	dw PlaceholderAnimationIdle
 	dw PlaceholderAnimationIdle
 	dw PlaceholderAnimationIdle
-	dw PlaceholderAnimationIdle
+	dw ElhawkAnimationIdle
 	dw PlaceholderAnimationIdle
 	dw PlaceholderAnimationIdle
 	dw PlaceholderAnimationIdle
