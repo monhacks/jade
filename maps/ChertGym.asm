@@ -9,6 +9,8 @@ ChertGym_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
+	warp_event  6, 13, CHERT_CITY, 5
+	warp_event  7, 13, CHERT_CITY, 5
 
 	def_coord_events
 
