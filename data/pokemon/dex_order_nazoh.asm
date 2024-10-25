@@ -188,15 +188,15 @@ NazohPokedexOrder:
 	dw 0
 	dw 0
 	dw 0
-	dw 0
-	dw ARTICUNO       ; 191
-	dw ZAPDOS         ; 192
-	dw MOLTRES        ; 193
-	dw RAIKOU         ; 194
-	dw ENTEI          ; 195
-	dw SUICUNE        ; 196
-	dw LUGIA          ; 197
-	dw HO_OH          ; 198
-	dw CELEBI         ; 199
+	dw ARTICUNO       ; 190
+	dw ZAPDOS         ; 191
+	dw MOLTRES        ; 192
+	dw RAIKOU         ; 193
+	dw ENTEI          ; 194
+	dw SUICUNE        ; 195
+	dw LUGIA          ; 196
+	dw HO_OH          ; 197
+	dw LATIAS         ; 198
+	dw LATIOS         ; 199
 	dw KOKOPELLI      ; 200
 .End

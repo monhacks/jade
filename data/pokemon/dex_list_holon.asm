@@ -149,8 +149,8 @@ DexListHolon:
 	dw    0 ; DRATINI
 	dw    0 ; DRAGONAIR
 	dw    0 ; DRAGONITE
-	dw  199 ; MEWTWO
-	dw  200 ; MEW
+	dw  198 ; MEWTWO
+	dw  199 ; MEW
 	dw    1 ; CHIKORITA
 	dw    2 ; BAYLEEF
 	dw    3 ; MEGANIUM
@@ -250,7 +250,7 @@ DexListHolon:
 	dw    0 ; TYRANITAR
 	dw    0 ; LUGIA
 	dw    0 ; HO_OH
-	dw    0 ; CELEBI
+	dw  200 ; CELEBI
 	dw    0 ; TREECKO
 	dw    0 ; GROVYLE
 	dw    0 ; SCEPTILE
@@ -343,15 +343,15 @@ DexListHolon:
 	dw    0 ; BELDUM
 	dw    0 ; METANG
 	dw    0 ; METAGROSS
-	dw  190 ; REGIROCK
-	dw  191 ; REGICE
-	dw  192 ; REGISTEEL
-	dw  196 ; LATIAS
-	dw  197 ; LATIOS
-	dw  193 ; KYOGRE
-	dw  194 ; GROUDON
-	dw  195 ; RAYQUAZA
-	dw  198 ; DEOXYS
+	dw  191 ; REGIROCK
+	dw  192 ; REGICE
+	dw  193 ; REGISTEEL
+	dw    0 ; LATIAS
+	dw    0 ; LATIOS
+	dw  194 ; KYOGRE
+	dw  195 ; GROUDON
+	dw  196 ; RAYQUAZA
+	dw  197 ; DEOXYS
 	dw    0 ; MON_161
 	dw    0 ; MON_162
 	dw    0 ; MON_163

@@ -188,15 +188,15 @@ HolonPokedexOrder:
 	dw 0
 	dw 0
 	dw 0
-	dw REGIROCK       ; 190
-	dw REGICE         ; 191
-	dw REGISTEEL      ; 192
-	dw KYOGRE         ; 193
-	dw GROUDON        ; 194
-	dw RAYQUAZA       ; 195
-	dw LATIAS         ; 196
-	dw LATIOS         ; 197
-	dw DEOXYS         ; 198
-	dw MEWTWO         ; 199
-	dw MEW            ; 200
+	dw 0
+	dw REGIROCK       ; 191
+	dw REGICE         ; 192
+	dw REGISTEEL      ; 193
+	dw KYOGRE         ; 194
+	dw GROUDON        ; 195
+	dw RAYQUAZA       ; 196
+	dw DEOXYS         ; 197
+	dw MEWTWO         ; 198
+	dw MEW            ; 199
+	dw CELEBI         ; 200
 .End

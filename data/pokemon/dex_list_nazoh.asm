@@ -143,9 +143,9 @@ DexListNazoh:
 	dw    0 ; KABUTOPS
 	dw    0 ; AERODACTYL
 	dw    0 ; SNORLAX
-	dw  191 ; ARTICUNO
-	dw  192 ; ZAPDOS
-	dw  193 ; MOLTRES
+	dw  190 ; ARTICUNO
+	dw  191 ; ZAPDOS
+	dw  192 ; MOLTRES
 	dw    0 ; DRATINI
 	dw    0 ; DRAGONAIR
 	dw    0 ; DRAGONITE
@@ -242,15 +242,15 @@ DexListNazoh:
 	dw    0 ; MAGBY
 	dw    0 ; MILTANK
 	dw    0 ; BLISSEY
-	dw  194 ; RAIKOU
-	dw  195 ; ENTEI
-	dw  196 ; SUICUNE
+	dw  193 ; RAIKOU
+	dw  194 ; ENTEI
+	dw  195 ; SUICUNE
 	dw    0 ; LARVITAR
 	dw    0 ; PUPITAR
 	dw    0 ; TYRANITAR
-	dw  197 ; LUGIA
-	dw  198 ; HO_OH
-	dw  199 ; CELEBI
+	dw  196 ; LUGIA
+	dw  197 ; HO_OH
+	dw    0 ; CELEBI
 	dw    1 ; TREECKO
 	dw    2 ; GROVYLE
 	dw    3 ; SCEPTILE
@@ -346,8 +346,8 @@ DexListNazoh:
 	dw    0 ; REGIROCK
 	dw    0 ; REGICE
 	dw    0 ; REGISTEEL
-	dw    0 ; LATIAS
-	dw    0 ; LATIOS
+	dw  198 ; LATIAS
+	dw  199 ; LATIOS
 	dw    0 ; KYOGRE
 	dw    0 ; GROUDON
 	dw    0 ; RAYQUAZA
