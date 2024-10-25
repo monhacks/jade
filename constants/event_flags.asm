@@ -117,6 +117,8 @@
 
 	const_next 900
 ; Trainers
+; class : TRIXIE
+	const EVENT_TRAINER_TRIXIE
 ; class : RIVAL1
 	const EVENT_TRAINER_RIVAL1_1_TREECKO
 	const EVENT_TRAINER_RIVAL1_1_TORCHIC
@@ -136,7 +138,7 @@
 	const EVENT_TRAINER_BUG_CATCHER_GEOFF
 ; class : PICNICKER
 	const EVENT_TRAINER_PICNICKER_1
-; Unused: next 686 events
+; Unused: next 685 events
 
 	const_next 1600
 ; Sprite visibility flags

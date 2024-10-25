@@ -66,19 +66,14 @@ ENDM
 SECTION "Enemy Trainer Parties 1", ROMX
 
 FalknerGroup:
-; testing
 	next_list_item
-	db "DICKS@", TRAINERTYPE_ITEM
-	trainer_mon  MAGIKARP, 5, NO_ABILITY, MALE
-	    mon_item ORAN_BERRY
-	trainer_mon  MAGIKARP, 5, NO_ABILITY, MALE
-	    mon_item LEPPA_BERRY
-	trainer_mon  MAGIKARP, 5, NO_ABILITY, MALE
-	    mon_item LUM_BERRY
-	trainer_mon  MAGIKARP, 5, NO_ABILITY, MALE
-	    mon_item PERSIM_BERRY
-	trainer_mon  MAGIKARP, 5, NO_ABILITY, MALE
-	    mon_item PECHA_BERRY
+	db "TRIXIE@", TRAINERTYPE_MOVES
+	trainer_mon  GELANLA, 11, CHLOROPHYLL, FEMALE
+	    mon_move CONSTRICT, SLEEP_POWDER, ABSORB, CONFIDE
+	trainer_mon  LITLEO, 11, RIVALRY, FEMALE
+	    mon_move HEADBUTT, EMBER, LEER, CONFIDE
+	trainer_mon  POLIWAG, 11, DAMP, FEMALE
+	    mon_move POUND, HYPNOSIS, WATER_GUN, CONFIDE
 	db -1 ; end
 	end_list_items
 
@@ -95,6 +90,21 @@ JasmineGroup:
 ChuckGroup:
 
 ClairGroup:
+; testing
+	next_list_item
+	db "DICKS@", TRAINERTYPE_ITEM
+	trainer_mon  MAGIKARP, 5, NO_ABILITY, MALE
+	    mon_item ORAN_BERRY
+	trainer_mon  MAGIKARP, 5, NO_ABILITY, MALE
+	    mon_item LEPPA_BERRY
+	trainer_mon  MAGIKARP, 5, NO_ABILITY, MALE
+	    mon_item LUM_BERRY
+	trainer_mon  MAGIKARP, 5, NO_ABILITY, MALE
+	    mon_item PERSIM_BERRY
+	trainer_mon  MAGIKARP, 5, NO_ABILITY, MALE
+	    mon_item PECHA_BERRY
+	db -1 ; end
+	end_list_items
 
 Rival1Group:
 	next_list_item ; RIVAL1 (1)

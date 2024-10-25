@@ -482,6 +482,7 @@ DEF MOVES_GP3 EQU const_value - 1
 	const TRAILBLAZE   ; 1d7
 	const DOOM_DESIRE  ; 1d8
 	const CRUSH_GRIP   ; 1d9
+	const CONFIDE      ; 1da
 DEF MOVES_GP4 EQU const_value - 1
 DEF NUM_ATTACKS EQU const_value - 1
 
