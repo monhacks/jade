@@ -287,13 +287,13 @@ GymStatue_CityGymText:
 	text_ram wStringBuffer3
 	text_start
 	line "#MON GYM"
+	para "LEADER: @"
+	text_ram wStringBuffer4
+	text_start
 	done
 
 GymStatue_WinningTrainersText:
-	text "LEADER: @"
-	text_ram wStringBuffer4
-	text_start
-	para "WINNING TRAINERS:"
+	text "WINNING TRAINERS:"
 	line "<PLAYER>"
 	done
 

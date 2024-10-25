@@ -301,7 +301,7 @@ DEF TM01 EQU const_value
 	add_tm THIEF        ; 032D
 	add_tm STEEL_WING   ; 032E
 	add_tm FIRE_PUNCH   ; 032F
-	add_tm FURY_CUTTER  ; 0330
+	add_tm CONFIDE      ; 0330
 	add_tm NIGHTMARE    ; 0331
 DEF NUM_TMS EQU __tmhm_value__ - 1
 

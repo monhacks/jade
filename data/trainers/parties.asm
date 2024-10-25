@@ -65,9 +65,9 @@ ENDM
 
 SECTION "Enemy Trainer Parties 1", ROMX
 
-FalknerGroup:
-	next_list_item
-	db "TRIXIE@", TRAINERTYPE_MOVES
+KatrinaGroup:
+	next_list_item ; KATRINA (1)
+	db "KATRINA@", TRAINERTYPE_MOVES
 	trainer_mon  GELANLA, 11, CHLOROPHYLL, FEMALE
 	    mon_move CONSTRICT, SLEEP_POWDER, ABSORB, CONFIDE
 	trainer_mon  LITLEO, 11, RIVALRY, FEMALE

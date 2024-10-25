@@ -5,7 +5,7 @@
 ; accounted for prior to the list check.
 
 GymLeaders:
-	db TRIXIE
+	db KATRINA
 	db WHITNEY
 	db BUGSY
 	db MORTY

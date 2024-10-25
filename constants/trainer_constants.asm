@@ -28,8 +28,8 @@ DEF CHRIS EQU __trainer_class__
 DEF NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 
 DEF KRIS EQU __trainer_class__
-	trainerclass TRIXIE ; 1
-	const TRIXIE1
+	trainerclass KATRINA ; 1
+	const KATRINA1
 
 	trainerclass WHITNEY ; 2
 
