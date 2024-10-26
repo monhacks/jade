@@ -98,6 +98,13 @@ ChertCityBG_GymSign:
 	para "-"
 	done
 
+ChertCityBG_SchoolSign:
+	jumptext .Text
+.Text:
+	text "CHERT CITY"
+	line "TRAINER SCHOOL"
+	done
+
 ChertCityBG_FlowerPark:
 	jumptext .Text
 .Text: ; TO-DO
@@ -135,6 +142,7 @@ ChertCity_MapEvents:
 	bg_event  8,  3, BGEVENT_READ, ChertCityBG_PokecenterSign
 	bg_event  4, 11, BGEVENT_READ, ChertCityBG_PokemartSign
 	bg_event 16, 16, BGEVENT_READ, ChertCityBG_GymSign
+	bg_event  3, 32, BGEVENT_READ, ChertCityBG_SchoolSign
 	bg_event 15, 31, BGEVENT_READ, ChertCityBG_FlowerPark
 	bg_event 11, 14, BGEVENT_ITEM, ChertCityBG_HISuperPotion
 
