@@ -221,7 +221,8 @@ HandleMapObjects:
 HandleMapBackground:
 	farcall _UpdateSprites
 	farcall ScrollScreen
-	farjp PlaceMapNameSign
+	farcall PlaceMapNameSign
+	farjp PlaceNotification
 
 CheckPlayerState:
 	ld a, [wPlayerStepFlags]
@@ -293,6 +294,7 @@ PlayerEvents:
 
 	xor a
 	ld [wLandmarkSignTimer], a
+	farcall SkipNotification
 
 .ok2
 	scf

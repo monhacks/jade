@@ -175,6 +175,9 @@ ConvertBerriesToBerryJuice:
 	jr .done
 
 ApplyPickup:
+	ld a, -1
+	ld [wPickupProc], a
+
 	ld hl, wPartyMon1Ability
 	ld a, [wPartyCount]
 	ld c, a
@@ -186,7 +189,15 @@ ApplyPickup:
 	add hl, de
 	dec c
 	jr nz, .party_loop
-	ret
+
+	ld a, [wPickupProc]
+	inc a
+	ret z
+
+	dec a
+	ld c, a
+	ld a, NOTIF_PICKUP
+	farjp QueueNotification
 
 .TryPickup:
 	push bc
@@ -247,6 +258,21 @@ ApplyPickup:
 
 	pop hl
 	ld [hl], a
+
+	pop hl
+	pop bc
+	ld a, [wPickupProc]
+	inc a
+	jr z, .set_pickup_notif
+	ld a, PARTY_LENGTH
+	jr .set_proc
+
+.set_pickup_notif
+	ld a, [wPartyCount]
+	sub c
+.set_proc
+	ld [wPickupProc], a
+	ret
 
 .done
 	pop hl

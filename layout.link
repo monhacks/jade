@@ -352,6 +352,7 @@ WRAMX 1
 	"Party"
 	"Berry Objects"
 	"Used Storage"
+	"Notification WRAM"
 	"Debug WRAM"
 WRAMX 2
 	"Pic Animations"

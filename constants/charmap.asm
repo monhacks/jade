@@ -130,6 +130,7 @@
 
 	charmap "<NA>",      $cc
 	charmap "<DELTA>",   $cd
+	charmap "^",         $cd ; terminator for notifs
 	charmap "′",         $ce
 	charmap "″",         $cf
 

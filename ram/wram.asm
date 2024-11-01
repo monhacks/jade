@@ -378,6 +378,7 @@ wTypeModifier::
 ; bit 7: stab
 	db
 
+wPickupProc::
 wCriticalHit::
 ; 0 if not critical
 ; 1 for a critical hit
@@ -3187,6 +3188,12 @@ wBerryObjectsEnd::
 
 wGameDataEnd::
 
+SECTION "Notification WRAM", WRAMX
+
+wNotificationTimer:: dw
+wNotifQueueReadPointer:: db
+wNotifQueueSetPointer:: db
+wNotifQueue:: ds 3 * 16
 
 SECTION "Pic Animations", WRAMX
 

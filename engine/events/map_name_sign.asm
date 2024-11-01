@@ -6,10 +6,10 @@ DEF POPUP_MAP_FRAME_SPACE EQU $fb
 
 ; wLandmarkSignTimer
 DEF MAPSIGNSTAGE_1_SLIDEOLD EQU $74
-DEF MAPSIGNSTAGE_2_LOADGFX  EQU $68
-DEF MAPSIGNSTAGE_3_SLIDEIN  EQU $65
-DEF MAPSIGNSTAGE_4_VISIBLE  EQU $59
-DEF MAPSIGNSTAGE_5_SLIDEOUT EQU $0c
+DEF MAPSIGNSTAGE_2_LOADGFX  EQU $6c
+DEF MAPSIGNSTAGE_3_SLIDEIN  EQU $69
+DEF MAPSIGNSTAGE_4_VISIBLE  EQU $5d
+DEF MAPSIGNSTAGE_5_SLIDEOUT EQU $10
 
 InitMapNameSign::
 	ld a, [wMapGroup]
@@ -57,6 +57,8 @@ InitMapNameSign::
 
 	call .CheckSpecialMap
 	jr z, .dont_do_map_sign
+
+	call SkipNotification ; Same Bank
 
 .show_sign
 ; Landmark sign timer: descends $74-$00
@@ -322,9 +324,7 @@ INCLUDE "gfx/signs/signs.pal"
 
 InitMapNameFrame:
 ; InitMapSignAttrMap
-	hlcoord 0, 0
-	ld de, wAttrmap - wTilemap
-	add hl, de
+	hlcoord 0, 0, wAttrmap
 	; top row
 	ld a, PRIORITY | PAL_BG_TEXT
 	ld bc, SCREEN_WIDTH - 1
