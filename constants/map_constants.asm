@@ -110,6 +110,7 @@ ENDC
 	newgroup TOWN08                                               ; 10
 	map_const TOWN_08,                                     10, 10 ;  1
 	map_const ROUTE_N10,                                   10, 40 ;  2
+	map_const ROUTE_N16,                                   60, 10 ;  3
 	endgroup
 
 	newgroup TOWN09                                               ; 11

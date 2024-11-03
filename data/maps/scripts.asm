@@ -54,6 +54,7 @@ INCLUDE "maps/ChertGym.asm"
 INCLUDE "maps/ChertFlowerShop.asm"
 INCLUDE "maps/ChertHouse1.asm"
 INCLUDE "maps/ChertHouse2.asm"
+INCLUDE "maps/RouteN16.asm"
 
 
 SECTION "Map Scripts 2", ROMX

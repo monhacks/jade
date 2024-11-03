@@ -42,6 +42,7 @@ MossyWoods_Blocks:      INCBIN "maps/MossyWoods.ablk"
 DeepMossyWoods_Blocks:  INCBIN "maps/DeepMossyWoods.ablk"
 ChertGym_Blocks:        INCBIN "maps/ChertGym.ablk"
 ChertFlowerShop_Blocks: INCBIN "maps/ChertFlowerShop.ablk"
+RouteN16_Blocks:        INCBIN "maps/RouteN16.ablk"
 
 
 SECTION "Map Blocks 2", ROMX

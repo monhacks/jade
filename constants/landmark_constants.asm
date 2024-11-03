@@ -33,9 +33,9 @@
 	const LANDMARK_CITY_11           ; 1d
 	const LANDMARK_ROUTE_N15         ; 1e
 	const LANDMARK_TOWN_12           ; 1f
-	const LANDMARK_CITY_13           ; 20
+	const LANDMARK_ROUTE_N16         ; 20
+	const LANDMARK_CITY_13           ; 21
 DEF LANDMARK_UP_TO_DATE_NAZOH EQU const_value - 1
-	const LANDMARK_CIANWOOD_CITY     ; 21
 	const LANDMARK_ROUTE_42          ; 22
 	const LANDMARK_MT_MORTAR         ; 23
 	const LANDMARK_MAHOGANY_TOWN     ; 24

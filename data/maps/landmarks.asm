@@ -39,9 +39,9 @@ Landmarks:
 	landmark  16,  48, City11Name
 	landmark  36,  72, RouteN15Name
 	landmark  36,  92, Town12Name
+	landmark 120,  28, RouteN16Name
 	landmark  92,  28, City13Name
 
-	landmark  20, 100, CianwoodCityName
 	landmark  92,  44, Route42Name
 	landmark  84,  44, MtMortarName
 	landmark 108,  44, MahoganyTownName
@@ -138,11 +138,11 @@ RouteN12Name:        db "ROUTE N12@"
 RouteN13Name:        db "ROUTE N13@"
 RouteN14Name:        db "ROUTE N14@"
 RouteN15Name:        db "ROUTE N15@"
+RouteN16Name:        db "ROUTE N16@"
 
 MossyWoodsName:      db "MOSSY WOODS@"
 DeepMossyWoodsName:  db "DEEP MOSSY<BSP>WOODS@"
 
-CianwoodCityName:    db "CIANWOOD<BSP>CITY@"
 MahoganyTownName:    db "MAHOGANY<BSP>TOWN@"
 BlackthornCityName:  db "BLACKTHORN<BSP>CITY@"
 LakeOfRageName:      db "LAKE OF<BSP>RAGE@"

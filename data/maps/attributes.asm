@@ -171,8 +171,13 @@ ENDM
 	connection south, RouteN05, ROUTE_N05, 10
 	connection west, MonolithCityWest, MONOLITH_CITY_WEST, 0
 
-	map_attributes Town08, TOWN_08, $05, SOUTH
+	map_attributes Town08, TOWN_08, $05, SOUTH | WEST
 	connection south, RouteN10, ROUTE_N10, 0
+	connection west, RouteN16, ROUTE_N16, 0
+
+	map_attributes RouteN16, ROUTE_N16, $05, WEST | EAST
+	connection west, City13, CITY_13, 0
+	connection east, Town08, TOWN_08, 0
 
 	map_attributes RouteN10, ROUTE_N10, $05, NORTH | SOUTH
 	connection north, Town08, TOWN_08, 0
@@ -214,8 +219,9 @@ ENDM
 	connection north, RouteN14, ROUTE_N14, -10
 	connection south, Town12, TOWN_12, 0
 
-	map_attributes City13, CITY_13, $05, SOUTH
+	map_attributes City13, CITY_13, $05, SOUTH | EAST
 	connection south, RouteN12, ROUTE_N12, 0
+	connection east, RouteN16, ROUTE_N16, 0
 
 	map_attributes MossyWoods, MOSSY_WOODS, $05, EAST
 	connection east, DeepMossyWoods, DEEP_MOSSY_WOODS, 0

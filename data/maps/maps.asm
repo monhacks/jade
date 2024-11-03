@@ -25,7 +25,7 @@ MapGroupPointers::
 	dw MapGroup_City04      ;  6
 	dw MapGroup_Coquina     ;  7
 	dw MapGroup_Town06      ;  8
-	dw MapGroup_Monolith      ;  9
+	dw MapGroup_Monolith    ;  9
 	dw MapGroup_Town08      ; 10
 	dw MapGroup_Town09      ; 11
 	dw MapGroup_City10      ; 12
@@ -119,6 +119,7 @@ MapGroup_Town08:
 	table_width MAP_LENGTH, MapGroup_Town08
 	map Town08, TILESET_JOHTO, TOWN, LANDMARK_TOWN_08, MUSIC_VIRIDIAN_CITY, FALSE, PALETTE_AUTO, FISHGROUP_NONE
 	map RouteN10, TILESET_JOHTO, ROUTE, LANDMARK_ROUTE_N10, MUSIC_ROUTE_26, FALSE, PALETTE_AUTO, FISHGROUP_NONE
+	map RouteN16, TILESET_JOHTO, ROUTE, LANDMARK_ROUTE_N16, MUSIC_ROUTE_26, FALSE, PALETTE_AUTO, FISHGROUP_NONE
 	assert_table_length NUM_TOWN08_MAPS
 
 MapGroup_Town09:
