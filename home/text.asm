@@ -374,12 +374,6 @@ PlacePOKEText::   db "<PO><KE>@"
 String_Space::    db " @"
 
 NextLineChar::
-	pop hl
-	ld bc, SCREEN_WIDTH * 2
-	add hl, bc
-	push hl
-	jmp NextChar
-
 LineFeedChar::
 	pop hl
 	ld bc, SCREEN_WIDTH
@@ -430,7 +424,7 @@ CarriageReturnChar::
 
 LineChar::
 	pop hl
-	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY + 2
+	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY + 1
 	push hl
 	jmp NextChar
 
@@ -474,8 +468,8 @@ _ContText::
 _ContTextNoPause::
 	push de
 	call TextScroll
-	call TextScroll
-	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY + 2
+;	call TextScroll
+	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY + 3
 	pop de
 	jmp NextChar
 
@@ -532,7 +526,7 @@ NullChar::
 TextScroll::
 	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY
 	decoord TEXTBOX_INNERX, TEXTBOX_INNERY - 1
-	ld a, TEXTBOX_INNERH - 1
+	ld a, TEXTBOX_INNERH
 
 .col
 	push af
@@ -553,8 +547,12 @@ TextScroll::
 	dec a
 	jr nz, .col
 
-	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY + 2
+	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY + 3
 	ld a, " "
+	ld bc, TEXTBOX_INNERW
+	rst ByteFill
+	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY - 1
+	ld a, "─"
 	ld bc, TEXTBOX_INNERW
 	rst ByteFill
 	ld c, 5
