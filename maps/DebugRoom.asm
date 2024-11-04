@@ -12,11 +12,12 @@ DebugRoomBG_TestGenMon:
 	text "This is a test of"
 	line "the new textbox"
 	next "engine."
+	done
 ;             123456789123456789
 	para "Hopefully this"
 	line "works ok and looks"
 	next "good… Otherwise,"
-	next "I wasted a bunch"
+	cont "I wasted a bunch"
 	cont "of time for abso-"
 	cont "lutely nothing!"
 	done

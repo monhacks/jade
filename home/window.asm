@@ -33,6 +33,12 @@ CloseText::
 	ldh [hBGMapMode], a
 	call LoadOverworldTilemapAndAttrmapPals
 	call HDMATransferTilemapAndAttrmap_Menu
+
+	ld a, LOW(LCDGeneric)
+	ldh [hFunctionTargetLo], a
+	ld hl, rIE
+	res LCD_STAT, [hl]
+
 	xor a
 	ldh [hBGMapMode], a
 	call SafeUpdateSprites

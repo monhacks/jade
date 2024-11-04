@@ -1,7 +1,6 @@
 DEF text   EQUS "db TX_START,"    ; Start writing text.
 DEF next   EQUS "db \"<NEXT>\","  ; Move a line down.
 DEF line   EQUS "db \"<LINE>\","  ; Start writing at the second line.
-DEF lin2   EQUS "db \"<LINE2>\"," ; Start writing at the bottom line.
 DEF page   EQUS "db \"@\","       ; Start a new Pokédex page.
 DEF para   EQUS "db \"<PARA>\","  ; Start a new paragraph.
 DEF cont   EQUS "db \"<CONT>\","  ; Scroll to the next line.

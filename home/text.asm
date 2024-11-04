@@ -134,6 +134,14 @@ TextboxPalette::
 
 SpeechTextbox::
 ; Standard textbox.
+; Enable LY int and custom interrupt function
+
+; HIGH(LCDGeneric) == HIGH(TextboxHBlank)
+	ld a, LOW(TextboxHBlank)
+	ldh [hFunctionTargetLo], a
+
+	ld hl, rIE
+	set LCD_STAT, [hl]
 	hlcoord TEXTBOX_X, TEXTBOX_Y
 	lb bc, TEXTBOX_INNERH, TEXTBOX_INNERW
 	jr Textbox
@@ -468,8 +476,7 @@ _ContText::
 _ContTextNoPause::
 	push de
 	call TextScroll
-;	call TextScroll
-	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY + 3
+	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY + 2
 	pop de
 	jmp NextChar
 
@@ -526,7 +533,7 @@ NullChar::
 TextScroll::
 	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY
 	decoord TEXTBOX_INNERX, TEXTBOX_INNERY - 1
-	ld a, TEXTBOX_INNERH
+	ld a, TEXTBOX_INNERH - 1
 
 .col
 	push af
@@ -547,12 +554,11 @@ TextScroll::
 	dec a
 	jr nz, .col
 
-	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY + 3
+	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY + 2
 	ld a, " "
 	ld bc, TEXTBOX_INNERW
 	rst ByteFill
 	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY - 1
-	ld a, "─"
 	ld bc, TEXTBOX_INNERW
 	rst ByteFill
 	ld c, 5

@@ -21,6 +21,38 @@ LCDGeneric::
 	pop af
 	reti
 
+TextboxHBlank::
+	push af
+	ldh a, [rLY]
+	cp 107
+	jr c, .done
+	sub 107
+	cp 21
+	jr c, .continue
+	ld a, 20
+.continue
+	push hl
+	add LOW(.ScrollValues)
+	ld l, a
+	ld h, HIGH(.ScrollValues)
+	ld a, [hl]
+	ldh [rSCY], a
+	pop hl
+.done
+	pop af
+	reti
+
+.ScrollValues:
+REPT 8
+	db 4
+ENDR
+	db -12, -12
+REPT 8
+	db 2
+ENDR
+	db -20, -20
+	db 0
+
 DisableLCD::
 ; Turn the LCD off
 
