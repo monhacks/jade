@@ -276,7 +276,7 @@ PokeBallEffect:
 	ld hl, wOptions
 	res NO_TEXT_SCROLL, [hl]
 	ld hl, ItemUsedText
-	call PrintText
+	call PrintText2Line
 
 	ld a, [wEnemyMonCatchRate]
 	ld b, a
@@ -568,7 +568,7 @@ PokeBallEffect:
 	farcall PlayerStats_MonsCaught
 
 	ld hl, Text_GotchaMonWasCaught
-	call PrintText
+	call PrintText2Line
 
 	call ClearSprites
 
@@ -587,7 +587,7 @@ PokeBallEffect:
 	jr z, .skip_pokedex
 
 	ld hl, NewDexDataText
-	call PrintText
+	call PrintText2Line
 
 	call ClearSprites
 
@@ -632,7 +632,7 @@ PokeBallEffect:
 
 .SkipPartyMonFriendBall:
 	ld hl, AskGiveNicknameText
-	call PrintText
+	call PrintText2Line
 
 	ld a, [wCurPartySpecies]
 	ld [wNamedObjectIndex], a
@@ -688,7 +688,7 @@ PokeBallEffect:
 	ld [wBufferMonHappiness], a
 .SkipBoxMonFriendBall:
 	ld hl, AskGiveNicknameText
-	call PrintText
+	call PrintText2Line
 
 	ld a, [wCurPartySpecies]
 	ld [wNamedObjectIndex], a
@@ -735,7 +735,7 @@ PokeBallEffect:
 	ld b, a
 	farcall GetBoxName
 	ld hl, CurBoxFullText
-	call PrintText
+	call PrintText2Line
 	pop bc
 
 	; Switch current box.
@@ -750,7 +750,7 @@ PokeBallEffect:
 	farcall GetBoxName
 
 	ld hl, BallSentToPCText
-	call PrintText
+	call PrintText2Line
 
 	ld c, 15
 	call FadeToWhite
@@ -766,7 +766,7 @@ PokeBallEffect:
 	ld hl, Text_GotchaMonWasCaught
 
 .shake_and_break_free
-	call PrintText
+	call PrintText2Line
 	call ClearSprites
 
 .return_from_capture
@@ -1310,7 +1310,7 @@ VitaminEffect:
 
 NoEffectMessage:
 	ld hl, ItemWontHaveEffectText
-	call PrintText
+	call PrintText2Line
 	jmp ClearPalettes
 
 UpdateStatsAfterItem:
@@ -2456,7 +2456,7 @@ RestorePPEffect:
 	ld hl, RestoreThePPOfWhichMoveText
 
 .ppup
-	call PrintText
+	call PrintText2Line
 
 	ld a, [wCurMoveNum]
 	push af

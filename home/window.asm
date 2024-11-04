@@ -34,12 +34,7 @@ CloseText::
 	call LoadOverworldTilemapAndAttrmapPals
 	call HDMATransferTilemapAndAttrmap_Menu
 
-	ld hl, rIE
-	res LCD_STAT, [hl]
-	ld a, LOW(LCDGeneric)
-	ldh [hFunctionTargetLo], a
-	xor a
-	ld [wTextboxMode], a
+	call ClearTextboxLCD
 
 	xor a
 	ldh [hBGMapMode], a
@@ -51,6 +46,15 @@ CloseText::
 	xor a
 	ldh [hBGMapMode], a
 	farjp InitMapNameSign
+
+ClearTextboxLCD:
+	ld hl, rIE
+	res LCD_STAT, [hl]
+	ld a, LOW(LCDGeneric)
+	ldh [hFunctionTargetLo], a
+	xor a
+	ld [wTextboxMode], a
+	ret
 
 OpenText::
 	call ClearWindowData

@@ -1123,14 +1123,14 @@ Pack_QuitNoScript:
 	set 7, [hl]
 	xor a ; FALSE
 	ld [wPackUsedItem], a
-	ret
+	jmp ClearTextboxLCD
 
 Pack_QuitRunScript:
 	ld hl, wJumptableIndex
 	set 7, [hl]
 	ld a, TRUE
 	ld [wPackUsedItem], a
-	ret
+	jmp ClearTextboxLCD
 
 Pack_PrintTextNoScroll:
 	ld a, [wOptions]
@@ -1289,9 +1289,7 @@ Pack_InitGFX:
 	call DrawPocketGFX
 	call PlacePackGFX
 ; Place the textbox for displaying the item description
-	hlcoord 0, SCREEN_HEIGHT - 4 - 2
-	lb bc, 4, SCREEN_WIDTH - 2
-	call Textbox
+	call SpeechTextbox
 	call EnableLCD
 	jmp DrawPackGFX
 

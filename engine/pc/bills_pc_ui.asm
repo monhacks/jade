@@ -42,6 +42,7 @@ _BillsPC:
 	push af
 	xor a
 	ldh [hMapAnims], a
+	ld [wTextboxMode], a
 	ld a, 71
 	ldh [rLYC], a
 	call LoadStandardMenuHeader
@@ -1340,7 +1341,7 @@ ManageBoxes:
 	; Prompt if we want to exit Box operations or not.
 	call BillsPC_HideCursorAndMode
 	ld hl, .ContinueBoxUse
-	call MenuTextbox
+	call MenuTextbox2
 	call YesNoBox
 	push af
 	call BillsPC_UpdateCursorLocation
@@ -2144,13 +2145,13 @@ BillsPC_GetStorageSpace:
 
 	push bc
 	ld hl, BillsPC_MustSaveToContinue
-	call MenuTextbox
+	call MenuTextbox2
 	call YesNoBox
 	push af
 	jr c, .menutext_abort
 	farcall ForceGameSave
 	ld hl, BillsPC_GameSaved
-	call PrintText
+	call PrintText2Line
 	; fallthrough
 .menutext_abort
 	call BillsPC_UpdateCursorLocation
@@ -2175,7 +2176,19 @@ BillsPC_GiveItem:
 
 .entries_not_full
 	call BillsPC_PrepareTransistion
+	ldh a, [hFunctionTargetLo]
+	push af
+	ldh a, [hFunctionTargetHi]
+	push af
+	ld a, LOW(TextboxHBlank)
+	ldh [hFunctionTargetLo], a
+	ld a, HIGH(TextboxHBlank)
+	ldh [hFunctionTargetHi], a
 	farcall PCGiveItem
+	pop af
+	ldh [hFunctionTargetHi], a
+	pop af
+	ldh [hFunctionTargetLo], a
 	; fallthrough
 
 BillsPC_ReturnFromTransistion:
@@ -2379,7 +2392,7 @@ BillsPC_PrintText:
 	push hl
 	call BillsPC_HideCursorAndMode
 	pop hl
-	call MenuTextbox
+	call MenuTextbox2
 	call BillsPC_UpdateCursorLocation
 	jmp CloseWindow
 
@@ -2512,7 +2525,7 @@ BillsPC_Item:
 	ld de, .MailMenu
 .got_menu
 	push de
-	call MenuTextbox
+	call MenuTextbox2
 	pop hl
 	ld b, 2
 	jr BillsPC_Menu
@@ -2668,12 +2681,12 @@ BillsPC_ReleaseAll:
 
 	; Double confirmation.
 	ld hl, .ReallyReleaseBox
-	call MenuTextbox
+	call MenuTextbox2
 	call NoYesBox
 	jr c, .done
 
 	ld hl, .CantRecallReleasedMons
-	call PrintText
+	call PrintText2Line
 	call NoYesBox
 	jr c, .done
 
@@ -2718,14 +2731,14 @@ BillsPC_ReleaseAll:
 	ld hl, .ReleasedXMon
 .print
 	push de
-	call PrintText
+	call PrintText2Line
 	pop de
 	ld a, e
 	and a
 	ld hl, .TheRestWasnt
 	jr z, .done
 .print2
-	call PrintText
+	call PrintText2Line
 .done
 	call BillsPC_UpdateCursorLocation
 	jmp CloseWindow
@@ -2780,7 +2793,7 @@ BillsPC_Release:
 	; menu in that case.
 	call BillsPC_HideCursorAndMode
 	ld hl, .ReallyReleaseMon
-	call MenuTextbox
+	call MenuTextbox2
 	call NoYesBox
 	jr c, .done
 
@@ -2798,7 +2811,7 @@ BillsPC_Release:
 
 	; Print message and reload current cursor mon.
 	ld hl, .WasReleasedOutside
-	call PrintText
+	call PrintText2Line
 
 	call .done
 	pop bc
@@ -2867,7 +2880,7 @@ BillsPC_Theme:
 
 	call LoadStandardMenuHeader
 	ld hl, .PickAThemeText
-	call PrintText
+	call PrintText2Line
 
 	ld hl, .ThemeMenuDataHeader
 	call CopyMenuHeader
@@ -3195,7 +3208,7 @@ BillsPC_SwapStorage:
 .swap_failed
 	; Print error message
 	push af
-	call MenuTextbox
+	call MenuTextbox2
 	pop af
 
 	; On carry, we got a confirmation prompt which re-runs this on "yes".
@@ -3207,7 +3220,7 @@ BillsPC_SwapStorage:
 	; Just re-run this function.
 	farcall ForceGameSave
 	ld hl, BillsPC_GameSaved
-	call PrintText
+	call PrintText2Line
 	call BillsPC_UpdateCursorLocation
 	call CloseWindow
 	pop bc

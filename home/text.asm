@@ -157,6 +157,14 @@ RadioTerminator::
 .stop:
 	text_end
 
+PrintText2Line::
+	push hl
+	call TwoLineTextbox
+	call UpdateSprites
+	call ApplyTilemap
+	pop hl
+	jr BuenaPrintText
+
 PrintText::
 	call SetUpTextbox
 	; fallthrough
