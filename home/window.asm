@@ -34,10 +34,12 @@ CloseText::
 	call LoadOverworldTilemapAndAttrmapPals
 	call HDMATransferTilemapAndAttrmap_Menu
 
-	ld a, LOW(LCDGeneric)
-	ldh [hFunctionTargetLo], a
 	ld hl, rIE
 	res LCD_STAT, [hl]
+	ld a, LOW(LCDGeneric)
+	ldh [hFunctionTargetLo], a
+	xor a
+	ld [wTextboxMode], a
 
 	xor a
 	ldh [hBGMapMode], a

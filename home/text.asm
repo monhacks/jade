@@ -133,15 +133,19 @@ TextboxPalette::
 	ret
 
 SpeechTextbox::
-; Standard textbox.
 ; Enable LY int and custom interrupt function
-
 ; HIGH(LCDGeneric) == HIGH(TextboxHBlank)
 	ld a, LOW(TextboxHBlank)
 	ldh [hFunctionTargetLo], a
 
+	ld a, 1
+	ld [wTextboxMode], a
+
 	ld hl, rIE
 	set LCD_STAT, [hl]
+
+TwoLineTextbox::
+; Standard textbox.
 	hlcoord TEXTBOX_X, TEXTBOX_Y
 	lb bc, TEXTBOX_INNERH, TEXTBOX_INNERW
 	jr Textbox
@@ -382,6 +386,12 @@ PlacePOKEText::   db "<PO><KE>@"
 String_Space::    db " @"
 
 NextLineChar::
+	pop hl
+	ld bc, SCREEN_WIDTH * 2
+	add hl, bc
+	push hl
+	jmp NextChar
+
 LineFeedChar::
 	pop hl
 	ld bc, SCREEN_WIDTH
@@ -432,7 +442,7 @@ CarriageReturnChar::
 
 LineChar::
 	pop hl
-	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY + 1
+	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY + 2
 	push hl
 	jmp NextChar
 
@@ -454,8 +464,10 @@ Paragraph::
 	call UnloadBlinkingCursor
 	ld c, 20
 	call DelayFrames
-	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY
 	pop de
+	pop hl
+	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY
+	push hl
 	jmp NextChar
 
 _ContText::
@@ -531,6 +543,10 @@ NullChar::
 	jmp NextChar
 
 TextScroll::
+	ld a, [wTextboxMode]
+	and a
+	call z, _TextScroll
+_TextScroll::
 	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY
 	decoord TEXTBOX_INNERX, TEXTBOX_INNERY - 1
 	ld a, TEXTBOX_INNERH - 1
@@ -792,7 +808,6 @@ TextCommand_SCROLL::
 ; below the first character column of the text box.
 	push hl
 	call UnloadBlinkingCursor
-	call TextScroll
 	call TextScroll
 	pop hl
 	bccoord TEXTBOX_INNERX, TEXTBOX_INNERY + 2

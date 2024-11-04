@@ -10,13 +10,12 @@ DebugRoomBG_TestGenMon:
 .Text:
 ;             123456789123456789
 	text "This is a test of"
-	line "the new textbox"
-	next "engine."
-	done
+	feed "the new textbox"
+	feed "engine."
 ;             123456789123456789
 	para "Hopefully this"
-	line "works ok and looks"
-	next "good… Otherwise,"
+	feed "works ok and looks"
+	feed "good… Otherwise,"
 	cont "I wasted a bunch"
 	cont "of time for abso-"
 	cont "lutely nothing!"

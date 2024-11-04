@@ -188,7 +188,7 @@ wTempObjectCopyY:: db
 wTempObjectCopyRadius:: db
 ENDU
 
-	ds 1
+wTextboxMode:: db ; 0 = 2 line, !0 = 3 line
 
 wTileDown::  db
 wTileUp::    db
