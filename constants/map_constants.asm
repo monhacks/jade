@@ -74,7 +74,7 @@ ENDC
 
 	newgroup CHERT                                                ;  5
 	map_const CHERT_CITY,                                  10, 20 ;  1
-	map_const ROUTE_N03,                                   20, 10 ;  2
+	map_const ROUTE_N03,                                   20, 20 ;  2
 	map_const ROUTE_N08,                                   20, 10 ;  3
 	map_const ROUTE_N09,                                   10, 20 ;  4
 	map_const CHERT_CITY_MOSSY_WOODS_GATE,                  5,  4 ;  5
