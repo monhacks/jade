@@ -528,10 +528,10 @@ DexEntryScreen_MenuActionJumptable:
 
 .Cry:
 	ld a, [wCurPartySpecies]
-	call GetPokemonIndexFromID
-	dec hl
-	ld d, h
-	ld e, l
+	call GetCryIndex
+	ret c
+	ld e, c
+	ld d, b
 	jmp PlayCry
 
 .Print:

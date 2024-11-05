@@ -170,6 +170,7 @@
 	const DRAGONITE  ; 095
 	const MEWTWO     ; 096
 	const MEW        ; 097
+DEF NUM_KANTO_POKEMON EQU const_value - 1
 DEF JOHTO_POKEMON EQU const_value
 	const CHIKORITA  ; 098
 	const BAYLEEF    ; 099
@@ -271,6 +272,7 @@ DEF JOHTO_POKEMON EQU const_value
 	const LUGIA      ; 0f9
 	const HO_OH      ; 0fa
 	const CELEBI     ; 0fb
+DEF NUM_JOHTO_POKEMON EQU const_value - 1
 DEF LATER_POKEMON EQU const_value
 	const TREECKO    ; 0fc
 	const GROVYLE    ; 0fd
@@ -442,6 +444,7 @@ DEF NUM_DEX_POKEMON EQU const_value - 1
 	const CASTFORM_SUNNY ; 1a2
 	const CASTFORM_RAINY ; 1a3
 	const CASTFORM_SNOWY ; 1a4
+
 DEF NUM_POKEMON EQU const_value - 1
 
 DEF EGG EQU -3

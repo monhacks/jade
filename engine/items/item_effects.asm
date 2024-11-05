@@ -1675,7 +1675,7 @@ RevivePokemon:
 	ld [wLowHealthAlarm], a
 	ld a, [wCurItem]
 	push hl
-	call GetItemIDFromIndex
+	call GetItemIndexFromID
 	cphl16 REVIVE
 	pop hl
 	jr z, .revive_half_hp
@@ -2450,8 +2450,10 @@ RestorePPEffect:
 
 	ld hl, RaiseThePPOfWhichMoveText
 	ld a, [wTempRestorePPItem]
+	push hl
 	call GetItemIndexFromID
 	cphl16 PP_UP
+	pop hl
 	jr z, .ppup
 	ld hl, RestoreThePPOfWhichMoveText
 
@@ -2482,8 +2484,10 @@ RestorePPEffect:
 	pop hl
 
 	ld a, [wTempRestorePPItem]
+	push hl
 	call GetItemIndexFromID
 	cphl16 PP_UP
+	pop hl
 	jmp nz, Not_PP_Up
 
 	ld a, [hl]
@@ -2641,10 +2645,16 @@ RestorePP:
 	jr nc, .dont_restore
 
 	ld a, [wTempRestorePPItem]
+	push hl
 	call GetItemIndexFromID
 	cphl16 MAX_ELIXER
+	pop hl
 	jr z, .restore_all
+	ld a, [wTempRestorePPItem]
+	push hl
+	call GetItemIndexFromID
 	cphl16 MAX_ETHER
+	pop hl
 	jr z, .restore_all
 
 	ld c, 10

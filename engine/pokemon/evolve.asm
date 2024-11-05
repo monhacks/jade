@@ -71,6 +71,9 @@ EvolveAfterBattle_MasterLoop:
 
 	ld c, a
 	ld a, [wLinkMode]
+	cp LINK_TIMECAPSULE
+	jmp z, .skip_evolution_species_parameter_word
+
 	and a
 	ld a, c
 	jmp nz, .link_mode_cancel
@@ -288,12 +291,13 @@ EvolveAfterBattle_MasterLoop:
 
 IF 0
 	ld a, b
-	cp EVOLVE_STAT
-	jr nz, .skip_evolution_species_parameter
+	cp EVOLVE_LEVEL
+	jr z, .skip_evolution_species_parameter_byte
+	cp EVOLVE_HAPPINESS
+	jr z, .skip_evolution_species_parameter_byte
+.skip_evolution_species_parameter_word
 	inc hl
-.skip_evolution_species_parameter
-	inc hl
-.skip_half_species_parameter
+.skip_evolution_species_parameter_byte
 	inc hl
 .skip_evolution_species
 	inc hl
@@ -1151,4 +1155,24 @@ EvoTest_Coins:
 
 .fail
 	and a
+	ret
+
+GetEvoItem:
+; Return evolution item in register b
+	call GetNextEvoAttackByte
+	ld b, a
+	call GetNextEvoAttackByte
+	push hl
+	ld h, a
+	ld l, b
+	call GetItemIDFromIndex
+	ld b, a
+	pop hl
+	ret
+
+GetEvoLevel:
+	call GetNextEvoAttackByte
+	ld b, a
+	ld a, [wTempMonLevel]
+	cp b
 	ret

@@ -491,9 +491,6 @@ ScrollingMenu_GetListItemCoordAndFunctionArgs:
 	ld a, [wMenuData_ScrollingMenuItemFormat]
 	cp SCROLLINGMENU_ITEMS_NORMAL
 	jr z, .got_spacing
-	cp SCROLLINGMENU_ITEMS_QUANTITY
-	jr z, .pointless_jump
-.pointless_jump
 	add hl, de
 .got_spacing
 	add hl, de
@@ -513,9 +510,6 @@ ScrollingMenu_GetListItemCoordAndFunctionArgs16bit:
 	ld a, [wMenuData_ScrollingMenuItemFormat]
 	cp SCROLLINGMENU_ITEMS_NORMAL
 	jr z, .got_spacing
-	cp SCROLLINGMENU_ITEMS_QUANTITY
-	jr z, .pointless_jump
-.pointless_jump
 	add hl, de
 .got_spacing
 	add hl, de
@@ -546,7 +540,7 @@ ScrollingMenu_GetListItemCoordAndFunctionArgs16bit:
 
 CheckItemPocketConversion:
 	ld a, [wItemFlags]
-	and a
+	and (1 << IN_BAG_F)
 	ret z
 	ld a, [wCurPocket]
 	cp BALL_POCKET

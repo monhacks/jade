@@ -3898,7 +3898,8 @@ TryToRunAwayFromBattle:
 	cp BATTLEACTION_FORFEIT
 	ld a, DRAW
 	jr z, .fled
-	dec a ; LOSE
+	assert DRAW - 1 == LOSE
+	dec a
 .fled
 	ld b, a
 	ld a, [wBattleResult]
@@ -3922,7 +3923,7 @@ InitBattleMon:
 	ld a, MON_SPECIES
 	call GetPartyParamLocation
 	ld de, wBattleMonSpecies
-	ld bc, MON_ID
+	ld bc, MON_OT_ID
 	rst CopyBytes
 	ld bc, MON_PERSONALITY - MON_ID
 	add hl, bc
@@ -4009,9 +4010,9 @@ InitEnemyMon:
 	ld hl, wOTPartyMon1Species
 	call GetPartyLocation
 	ld de, wEnemyMonSpecies
-	ld bc, MON_ID
+	ld bc, MON_OT_ID
 	rst CopyBytes
-	ld bc, MON_DVS - MON_ID
+	ld bc, MON_DVS - MON_OT_ID
 	add hl, bc
 	ld de, wEnemyMonDVs
 	ld bc, MON_POKERUS - MON_DVS
@@ -6992,7 +6993,8 @@ ApplyStatLevelMultiplier:
 	pop bc
 	ret
 
-INCLUDE "data/battle/stat_multipliers_2.asm"
+StatLevelMultipliers_Applied:
+INCLUDE "data/battle/stat_multipliers.asm"
 
 _LoadBattleFontsHPBar:
 	farjp LoadBattleFontsHPBar
@@ -7243,7 +7245,7 @@ GiveExperiencePoints:
 	call Divide
 ; Boost Experience for traded Pokemon
 	pop bc
-	ld hl, MON_ID
+	ld hl, MON_OT_ID
 	add hl, bc
 	ld a, [wPlayerID]
 	cp [hl]

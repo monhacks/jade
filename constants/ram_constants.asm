@@ -389,3 +389,16 @@ DEF NUM_UNLOCKED_UNOWN_SETS EQU const_value
 	const REGISTERED_DIG          ; 5
 DEF NUM_REGISTER_OPTIONS EQU const_value ; 6
 	const REGISTERED_TELEPORT_ICON ; 6
+
+; hVBlank::
+; VBlankHandlers indexes (see home/vblank.asm)
+	const_def
+	const VBLANK_NORMAL       ; 0
+	const VBLANK_CUTSCENE     ; 1
+	const VBLANK_SOUND_ONLY   ; 2
+	const VBLANK_CUTSCENE_CGB ; 3
+	const VBLANK_SERIAL       ; 4
+	const VBLANK_CREDITS      ; 5
+	const VBLANK_DMA_TRANSFER ; 6
+	const VBLANK_UNUSED       ; 7
+DEF NUM_VBLANK_HANDLERS EQU const_value
