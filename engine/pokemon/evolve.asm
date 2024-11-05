@@ -71,9 +71,6 @@ EvolveAfterBattle_MasterLoop:
 
 	ld c, a
 	ld a, [wLinkMode]
-	cp LINK_TIMECAPSULE
-	jmp z, .skip_evolution_species_parameter_word
-
 	and a
 	ld a, c
 	jmp nz, .link_mode_cancel

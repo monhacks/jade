@@ -3925,7 +3925,7 @@ InitBattleMon:
 	ld de, wBattleMonSpecies
 	ld bc, MON_OT_ID
 	rst CopyBytes
-	ld bc, MON_PERSONALITY - MON_ID
+	ld bc, MON_PERSONALITY - MON_OT_ID
 	add hl, bc
 	ld de, wBattleMonPersonality
 	ld bc, MON_POKERUS - MON_PERSONALITY
