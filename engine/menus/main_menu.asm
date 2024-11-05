@@ -177,7 +177,7 @@ MainMenu_PrintCurrentTimeAndDay:
 	jmp Textbox
 
 .TimeFail:
-	jmp SpeechTextbox
+	jmp TwoLineTextbox
 
 .PlaceTime:
 	ld a, [wSaveFileExists]

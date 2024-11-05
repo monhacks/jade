@@ -133,6 +133,18 @@ TextboxPalette::
 	ret
 
 SpeechTextbox::
+; Enable LY int and custom interrupt function
+; HIGH(LCDGeneric) == HIGH(TextboxHBlank)
+	ld a, LOW(TextboxHBlank)
+	ldh [hFunctionTargetLo], a
+
+	ld a, 1
+	ld [wTextboxMode], a
+
+	ld hl, rIE
+	set LCD_STAT, [hl]
+
+TwoLineTextbox::
 ; Standard textbox.
 	hlcoord TEXTBOX_X, TEXTBOX_Y
 	lb bc, TEXTBOX_INNERH, TEXTBOX_INNERW
@@ -144,6 +156,14 @@ RadioTerminator::
 
 .stop:
 	text_end
+
+PrintText2Line::
+	push hl
+	call TwoLineTextbox
+	call UpdateSprites
+	call ApplyTilemap
+	pop hl
+	jr BuenaPrintText
 
 PrintText::
 	call SetUpTextbox
@@ -452,8 +472,10 @@ Paragraph::
 	call UnloadBlinkingCursor
 	ld c, 20
 	call DelayFrames
-	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY
 	pop de
+	pop hl
+	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY
+	push hl
 	jmp NextChar
 
 _ContText::
@@ -473,7 +495,6 @@ _ContText::
 
 _ContTextNoPause::
 	push de
-	call TextScroll
 	call TextScroll
 	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY + 2
 	pop de
@@ -530,6 +551,10 @@ NullChar::
 	jmp NextChar
 
 TextScroll::
+	ld a, [wTextboxMode]
+	and a
+	call z, _TextScroll
+_TextScroll::
 	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY
 	decoord TEXTBOX_INNERX, TEXTBOX_INNERY - 1
 	ld a, TEXTBOX_INNERH - 1
@@ -555,6 +580,9 @@ TextScroll::
 
 	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY + 2
 	ld a, " "
+	ld bc, TEXTBOX_INNERW
+	rst ByteFill
+	hlcoord TEXTBOX_INNERX, TEXTBOX_INNERY - 1
 	ld bc, TEXTBOX_INNERW
 	rst ByteFill
 	ld c, 5
@@ -788,7 +816,6 @@ TextCommand_SCROLL::
 ; below the first character column of the text box.
 	push hl
 	call UnloadBlinkingCursor
-	call TextScroll
 	call TextScroll
 	pop hl
 	bccoord TEXTBOX_INNERX, TEXTBOX_INNERY + 2

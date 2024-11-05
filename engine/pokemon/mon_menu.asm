@@ -259,6 +259,8 @@ _GetItemToGive:
 .loop
 	call DepositSellPack
 
+	call ClearTextboxLCD
+
 	ld a, [wPackUsedItem]
 	and a
 	ret z
@@ -297,7 +299,7 @@ PCGiveItem:
 	jr z, .item_ok
 
 	ld hl, CantPlaceMailInStorageText
-	call MenuTextboxBackup
+	call MenuTextbox2Line
 	jr .loop
 
 .item_ok
@@ -310,7 +312,7 @@ PCGiveItem:
 	rst CopyBytes
 
 	ld hl, PokemonHoldItemText
-	call MenuTextboxBackup
+	call MenuTextbox2Line
 
 	; Now, actually give the item.
 	ld a, [wBufferMonSpecies]
@@ -332,7 +334,7 @@ PCGiveItem:
 	jmp ComposeMailMessage
 
 TryGiveItemToPartymon:
-	call SpeechTextbox
+	call TwoLineTextbox
 	call PartyMonItemName
 	call GetPartyItemLocation
 	ld a, [hl]
@@ -351,11 +353,12 @@ TryGiveItemToPartymon:
 	call GiveItemToPokemon
 	ld hl, PokemonHoldItemText
 	call MenuTextboxBackup
+	call ClearTextboxLCD
 	jr GivePartyItem
 
 .please_remove_mail
 	ld hl, PokemonRemoveMailText
-	jmp MenuTextboxBackup
+	jmp MenuTextbox2Line
 
 .already_holding_item
 	ld [wNamedObjectIndex], a
@@ -385,7 +388,7 @@ TryGiveItemToPartymon:
 	ld [wCurItem], a
 	call ReceiveItemFromPokemon
 	ld hl, ItemStorageFullText
-	jmp MenuTextboxBackup
+	jmp MenuTextbox2Line
 
 GivePartyItem:
 	call GetPartyItemLocation
@@ -397,7 +400,7 @@ GivePartyItem:
 	jmp ComposeMailMessage
 
 TakePartyItem:
-	call SpeechTextbox
+	call TwoLineTextbox
 	call GetPartyItemLocation
 	ld a, [hl]
 	and a
@@ -414,15 +417,15 @@ TakePartyItem:
 	ld [hl], NO_ITEM
 	call GetItemName
 	ld hl, PokemonTookItemText
-	jmp MenuTextboxBackup
+	jmp MenuTextbox2Line
 
 .not_holding_item
 	ld hl, PokemonNotHoldingText
-	jmp MenuTextboxBackup
+	jmp MenuTextbox2Line
 
 .item_storage_full
 	ld hl, ItemStorageFullText
-	jmp MenuTextboxBackup
+	jmp MenuTextbox2Line
 
 GiveTakeItemMenuData:
 	db MENU_SPRITE_ANIMS | MENU_BACKUP_TILES ; flags
@@ -578,12 +581,12 @@ TakeMail:
 	farcall SendMailToPC
 	jr c, .MailboxFull
 	ld hl, .MailSentToPCText
-	call MenuTextboxBackup
+	call MenuTextbox2Line
 	jr .TookMail
 
 .MailboxFull:
 	ld hl, .MailboxFullText
-	call MenuTextboxBackup
+	call MenuTextbox2Line
 	jr .KeptMail
 
 .RemoveMailToBag:
@@ -599,7 +602,7 @@ TakeMail:
 	ld [hl], $0
 	call GetCurNickname
 	ld hl, .MailDetachedText
-	call MenuTextboxBackup
+	call MenuTextbox2Line
 	; fallthrough
 .TookMail:
 	scf
@@ -607,7 +610,7 @@ TakeMail:
 
 .BagIsFull:
 	ld hl, .MailNoSpaceText
-	call MenuTextboxBackup
+	call MenuTextbox2Line
 	; fallthrough
 .KeptMail:
 	and a

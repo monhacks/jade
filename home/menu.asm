@@ -304,6 +304,12 @@ CopyMenuHeader::
 	ld [wMenuDataBank], a
 	ret
 
+MenuTextbox2:
+	push hl
+	call LoadMenuTextbox
+	pop hl
+	jmp PrintText2Line
+
 MenuTextbox::
 	push hl
 	call LoadMenuTextbox
@@ -322,6 +328,13 @@ LoadMenuTextbox::
 
 MenuTextboxBackup::
 	call MenuTextbox
+	jmp CloseWindow
+
+MenuTextbox2Line::
+	push hl
+	call LoadMenuTextbox
+	pop hl
+	call PrintText2Line
 	jmp CloseWindow
 
 LoadStandardMenuHeader::

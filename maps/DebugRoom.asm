@@ -6,22 +6,20 @@ DebugRoom_MapScripts:
 	def_callbacks
 
 DebugRoomBG_TestGenMon:
-	callasm .CrashTheGameLmao
-	end
-.CrashTheGameLmao:
-	ldh a, [hJoypadDown]
-	and B_BUTTON
-	jr z, :+
-	ld a, $69
-	ldh [rDMA], a
-REPT 20
-	nop
-ENDR
-	ret
-
-:
-	rst $38
-	ret
+	jumptext .Text
+.Text:
+;             123456789123456789
+	text "This is a test of"
+	feed "the new textbox"
+	feed "engine."
+;             123456789123456789
+	para "Hopefully this"
+	feed "works ok and looks"
+	feed "good… Otherwise,"
+	cont "I wasted a bunch"
+	cont "of time for abso-"
+	cont "lutely nothing!"
+	done
 
 DebugRoom_MapEvents:
 	db 0, 0 ; filler
